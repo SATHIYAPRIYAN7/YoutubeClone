@@ -23,7 +23,7 @@ function Commentcontainer() {
     
   return (
     <div >
-        <h1 className='text-xl font-bold pl-3 pb-4'>{comments.length} Comments</h1>
+        <h1 className='text-xl font-bold pl-5 pb-4'>{comments.length} Comments</h1>
         <div className='w-[850px] '>
          <input onFocus={()=> setisactive(true)} value={isactive1} onChange={(e)=> handlechange(e.target.value) }  className='w-full mb-2 bg-transparent outline-none focus:border-white border-b-2 pl-3 pr-36 mx-6 border-gray-500' type="text" placeholder='Add a comment' /> 
         { isactive && <div className='text-right'>

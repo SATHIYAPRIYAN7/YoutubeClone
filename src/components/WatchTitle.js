@@ -20,7 +20,7 @@ function WatchTitle() {
     <>
         <h1 className='text-2xl px-4 font-semibold'>{selector?.snippet?.title}</h1>
 
-        <div className='mt-4 ml-4'> 
+        <div className='mt-4 ml-4 flex items-center justify-between'> 
             <div className='flex items-center'>
                 <img className='w-12 mr-3 rounded-full' src={selector1?.items[0]?.snippet?.thumbnails?.default.url}/>
                 <div className='mr-10'>
@@ -28,6 +28,9 @@ function WatchTitle() {
                     <p className='text-[12px] text-slate-400'>{subcount} subscribers</p>
                 </div>
                 <button className='bg-white text-black px-3 rounded-2xl py-1'>Subscribe</button>
+            </div>
+            <div>
+              <p className='pr-16'>Live Chat</p>
             </div>
         </div>
 

@@ -58,7 +58,7 @@ reply && <div className='w-[50%]'>
         }</div>
 
         {
-          coms.replies.length>0 &&  <p onClick={()=> setshowreply(!showreply)} className='ml-10 text-sm mb-2 flex items-center gap-1 text-blue-500'>{!showreply?<IoMdArrowDropdown className='text-lg' />:<IoMdArrowDropup className='text-lg' />}{coms.replies.length+ " replies"}</p>}
+          coms.replies.length>0 &&  <p onClick={()=> setshowreply(!showreply)} className='ml-10 text-sm mb-2 flex items-center gap-1 text-blue-500 w-fit px-2 rounded-2xl cursor-pointer py-1 hover:bg-blue-950'>{!showreply?<IoMdArrowDropdown className='text-lg' />:<IoMdArrowDropup className='text-lg' />}{coms.replies.length+ " replies"}</p>}
           <hr className='opacity-25'/>
     </div>
   )
