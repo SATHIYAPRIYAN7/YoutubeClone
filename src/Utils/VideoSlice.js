@@ -9,6 +9,7 @@ const VideoSlice = createSlice({
         channelDetails:null,
         SearchSuggestion:[],
         SearchQuery:null,
+        livechatshow:false,
     },
     reducers:{
         addvideoData : (state,action)=>{
@@ -25,9 +26,12 @@ const VideoSlice = createSlice({
         },
         addSearchQuery :(state,action)=>{
             state.SearchQuery = action.payload     
+           },
+           addlivechatshow:(state)=>{
+            state.livechatshow=!state.livechatshow
            }
     }
 })
 
-export const{addvideoData,addwatchvideo,addSearchQuery,addchanneldetails,addsearchsuggestion} = VideoSlice.actions
+export const{addvideoData,addwatchvideo,addSearchQuery,addchanneldetails,addsearchsuggestion,addlivechatshow} = VideoSlice.actions
 export default VideoSlice.reducer;

@@ -1,10 +1,15 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import Commentcontainer from './Commentcontainer'
+import { MdOutlineMarkUnreadChatAlt } from "react-icons/md";
+import Livechat from './Livechat';
+import { addlivechatshow } from '../Utils/VideoSlice';
 
 function WatchTitle() {
+  const dispatch=useDispatch();
     const selector =useSelector(store => store.video?.watchVideo)
     const selector1 =useSelector(store => store.video?.channelDetails) 
+    const showlive = useSelector(store => store.video?.livechatshow)
     const [show,setshow]=useState(false)
     // console.log(selector.snippet.description)
      if(selector1 == null) return null;
@@ -29,8 +34,9 @@ function WatchTitle() {
                 </div>
                 <button className='bg-white text-black px-3 rounded-2xl py-1'>Subscribe</button>
             </div>
-            <div>
-              <p className='pr-16'>Live Chat</p>
+            <div onClick={()=> dispatch(addlivechatshow())} className='pr-16 flex flex-col justify-center items-center'>
+            <MdOutlineMarkUnreadChatAlt className='text-3xl hover:scale-105 cursor-pointer' />
+              <p className=' text-sm'>Live Chat</p>
             </div>
         </div>
 
@@ -40,6 +46,10 @@ function WatchTitle() {
     {show ? "Show less" : "...more"}
   </p>
 </div>
+
+        { showlive && <div className='w-full' >
+         <Livechat/>
+        </div>}
 
 <div className='w-full'>
   <Commentcontainer/>
